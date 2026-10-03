@@ -1,0 +1,46 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: read-resources
+rules:
+  - apiGroups:
+      [
+        "",
+        "apps",
+        "batch",
+        "eventing.knative.dev",
+        "flows.knative.dev",
+        "messaging.knative.dev",
+        "serving.knative.dev",
+        "sources.knative.dev",
+      ]
+    resources:
+      [
+        "pods",
+        "replicationcontrollers",
+        "services",
+        "daemonsets",
+        "deployments",
+        "replicasets",
+        "statefulsets",
+        "horizontalpodautoscalers",
+        "cronjobs",
+        "jobs",
+        "brokers",
+        "triggers",
+        "eventtypes",
+        "parallels",
+        "sequences",
+        "channels",
+        "inmemorychannels",
+        "subscriptions",
+        "configurations",
+        "revisions",
+        "routes",
+        "domainmappings",
+        "apiserverresources",
+        "containersources",
+        "pingsources",
+        "sinkbindings",
+      ]
+    verbs: ["get", "list", "watch"]
